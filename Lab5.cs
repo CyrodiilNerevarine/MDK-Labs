@@ -56,4 +56,8 @@ namespace AllLabs.Lab5
         public string Name()
         {
             return "Лабораторная №5. OOП";
+            
+                    }
+    }
+}
 
