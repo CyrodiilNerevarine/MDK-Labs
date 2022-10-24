@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab1
 {
-    
+    internal interface ILabs
     {
         void Demo();
         string Name();
