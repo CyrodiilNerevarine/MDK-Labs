@@ -19,12 +19,7 @@ namespace Lab1
 
             Console.WriteLine(p1);
             // задание №2
-            Random rnd = new Random();
-            int d = rnd.Next();
-            int e = rnd.Next();
-            double f = Math.Pow(d, 2) + Math.Pow(e, 1 / 3) / (d + e);
-            Console.WriteLine();
-            Console.WriteLine(f);
+            
             // задание №3
             double g = 5.93576;
             int h = (int)g;
