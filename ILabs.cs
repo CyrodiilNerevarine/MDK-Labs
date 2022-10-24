@@ -6,6 +6,9 @@ namespace Lab1
 {
     internal interface ILabs
     {
-        
+        void Demo();
+        string Name();
+        string Description();
+        int Id();
     }
 }
