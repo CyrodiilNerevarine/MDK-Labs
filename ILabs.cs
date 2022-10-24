@@ -10,5 +10,6 @@ namespace Lab1
         string Name();
         string Description();
         int Id();
+        int x = 18;
     }
 }
