@@ -1,120 +1,60 @@
-using AllLabs.Lab5;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+            using Lab1;
+            using System;
+            using System.Collections.Generic;
+            using System.Text;
 
-namespace Lab1
-{
-    class Program
+namespace AllLabs.Lab5
     {
-        static void Main()
+        class Lab6 : ILabs
         {
-            List<ILabs> labs = new List<ILabs>();
-
-            labs.Add(new Lab1());           // добавляем лабы в список
-            labs.Add(new Lab2());           // потом сделаем автоматически!
-            labs.Add(new Lab3());
-            labs.Add(new Lab4());
-            labs.Add(new Lab5());
-
-
-            LabsInfo(labs);                 // выводим информацию о всех лабах
-
-            bool running = true;
-
-            while (running)                // запускаем бесконечный цикл
+            /// <summary>
+            /// Метод демонстрации всех заданий лабораторной работы
+            /// </summary>    
+            public void Demo()
             {
-                Console.Write("Введите ID лабораторной: ");
-                string command = Console.ReadLine();
-
-                switch (command)
+                // Console.WriteLine("Демо");
+                // ход лабы
+                int Factorial(int n)
                 {
-                    case "clear":
-                        Clear();
-                        break;
-                    case "info":
-                        LabsInfo(labs);
-                        break;
-                    case "help":
-                        Help();
-                        break;
-                    case "exit":
-                        running = false;
-                        break;
-                    default:
-                        {
-                            Demo(labs, command);
-                        }
-                        break;
+                    if (n == 1) return 1;
+
+                    return n * Factorial(n - 1);
                 }
+
+                int factorial4 = Factorial(4);  // 24
+                int factorial5 = Factorial(5);  // 120
+                int factorial6 = Factorial(6);  // 720
+
+                Console.WriteLine($"Факториал числа 4 = {factorial4}");
+                Console.WriteLine($"Факториал числа 5 = {factorial5}");
+                Console.WriteLine($"Факториал числа 6 = {factorial6}");
             }
-        }
-
-        /// <summary>
-        /// Метод запускает Demo по введенному ID
-        /// </summary>
-        /// <param name="labs"></param>
-        /// <param name="id"></param>
-        static void Demo(List<ILabs> labs, string id)
-        {
-            try
+            /// <summary>
+            /// Метод возвращает описание заданий лабораторной работы
+            /// </summary>
+            /// <returns></returns>
+            /// <returns>Описание лабы</returns>
+            public string Description()
             {
-                int ID = Convert.ToInt32(id);
-                foreach (ILabs lab in labs)
-                {
-                    if (ID == lab.Id())
-                    {
-                        lab.Demo();
-                    }
-                }
+                return "Задание 6";
             }
-            catch
+            /// <summary>
+            /// Метод возвращает номер лабораторной работы
+            /// </summary>
+            /// <returns>Номер лабы</returns>
+            public int Id()
             {
-                Console.WriteLine("Неверная команда. Попробуйте еще раз.");
+                return 6;
             }
-        }
 
-        /// <summary>
-        /// Метод выводит информацию обо всех доступных лабораторных
-        /// </summary>
-        /// <param name="labs"></param>
-        static void LabsInfo(List<ILabs> labs)
-        {
-            foreach (ILabs lab in labs)
+            /// <summary>
+            /// Метод возвращает заголовок лабораторной работы
+            /// </summary>
+            /// <returns></returns>
+            public string Name()
             {
-                Console.WriteLine(lab.Id());
-                Console.WriteLine(lab.Name());
-                Console.WriteLine(lab.Description());
-                Console.WriteLine();
-            }
-        }
-
-        /// <summary>
-        /// Метод очищает экран
-        /// </summary>
-        static void Clear()
-        {
-            Console.Clear();
-        }
-
-        /// <summary>
-        /// Метод выводит все доступные команды
-        /// </summary>
-        static void Help()
-        {
-            string[] commands =
-            {
-            "<ID> - запуск демонстрации лабораторной по ID",
-            "<exit> - выход",
-            "<help> - список доступных команд",
-            "<clear> - очистка экрана",
-            "<info> - вывод информации о всех лабораторных"
-        };
-
-            foreach (string command in commands)
-            {
-                Console.WriteLine(command);
+                return "Лабораторная №6. Рекурсивная функция";
             }
         }
     }
-} 
