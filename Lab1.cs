@@ -1,31 +1,26 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lab1
 {
     public class Lab1 : ILabs
-    {
-        /// <summary>
-        /// Метод демонстрации заданий лабораторной работы
-        /// </summary>    
+    {  
         public void Demo()
         {
-            // Console.WriteLine("Демо");
-            // ход лабораторной работы
-            // задание 1
+            Console.Write
             int a = 2; int b = 3; int c = 15;
             double p1 = Math.Sqrt((Math.Pow(a, 2) - Math.Pow(b, 3)) / Math.Sqrt(Math.Pow(b, 4) - Math.Pow(a, 4)) + Math.Abs(Math.Pow(b, 5) - Math.Pow(c, 2.5)));
 
             Console.WriteLine(p1);
-            // задание 2
+            // задание №2
             Random rnd = new Random();
             int d = rnd.Next();
             int e = rnd.Next();
             double f = Math.Pow(d, 2) + Math.Pow(e, 1 / 3) / (d + e);
             Console.WriteLine();
             Console.WriteLine(f);
-            // задание 3
+            // задание №3
             double g = 5.93576;
             int h = (int)g;
             int q = (int)(Math.Round(g));
@@ -54,7 +49,7 @@ namespace Lab1
         /// Метод возвращает описание заданий лабораторной работы
         /// </summary>
         /// <returns></returns>
-        /// <returns>Описание лабораторной</returns>
+        /// <returns>Описание лабы</returns>
         public string Description()
         {
             return "Задание 1";
@@ -62,7 +57,7 @@ namespace Lab1
         /// <summary>
         /// Метод возвращает номер лабораторной работы
         /// </summary>
-        /// <returns>Номер лабораторной</returns>
+        /// <returns>Номер лабы</returns>
         public int Id()
         {
             return 1;
@@ -74,7 +69,7 @@ namespace Lab1
         /// <returns></returns>
         public string Name()
         {
-            return "Лабораторная №1. Тема: Математические вычисления";
+            return "Лабораторная №1. Тема: математические вычисления";
         }
     }
 }
